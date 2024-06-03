@@ -29,7 +29,6 @@
             <p>The ng-repeat directive actually clones HTML elements once for each item in a collection.
                 The ng-repeat directive can be used on an array of objects</p>
         </li>
-        ng-repeat
     </ul>
     <h3>Examples:</h3>
     <div ng-app="myApp" ng-init="person='Paco'; names = ['Jani','Hege','Kai']; people=[
@@ -38,6 +37,11 @@
     {name:'Kai',country:'Denmark'}]">
         <p>Name:<input type="text" ng-model="person"></p>
         <p>Name written: <span ng-bind="person"></span></p>
+        <form name="myForm">
+            <p>Data validation ng-model</p>
+            <p>Email: <input type="email" name="myEmail" ng-model="email"></p>
+            <span ng-show = "myForm.myEmail.$error.email">Not a valid email</span>
+        </form>
         <p>ng-Repeat directive with an array</p>
         <ul>
             <li ng-repeat = "name in names">{{name}}</li>
