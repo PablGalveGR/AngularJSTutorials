@@ -1,57 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+<style>
+  input.ng-invalid {
+    border-color: red;
+    font-weight: bold;
+    color: red;
+  }
+</style>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Angular Introduction</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-    <script src="../JSAngular/AngularDirectives.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Angular Introduction</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="../JSAngular/AngularDirectives.js"></script>
 </head>
+
 <body>
-    
-    <h1>Angular Directives</h1>
-    <h2>Directives</h2>
-    <ul>
-        <li>ng-app</br>
-            <p>Defines the part of the html in wich we can use angular functionalities</p>
-        </li>
-        <li>ng-model</br>
-            <p>Defines the name of a variable that will store the data of an input</p>
-        </li>
-        <li>ng-bind</br>
-            <p>Ouputs the data stored on the model directive</p>
-        </li>
-        <li>ng-init</br>
-            <p>Initialices the data of the angular app</p>
-        </li>
-        <li>ng-repeat</br>
-            <p>Repeats an HTML element</p>
-            <p>The ng-repeat directive actually clones HTML elements once for each item in a collection.
-                The ng-repeat directive can be used on an array of objects</p>
-        </li>
-    </ul>
-    <h3>Examples:</h3>
-    <div ng-app="myApp" ng-init="person='Paco'; names = ['Jani','Hege','Kai']; people=[
+
+  <h1>Angular Directives</h1>
+  <h2>Directives</h2>
+  <ul>
+    <li>ng-app</br>
+      <p>Defines the part of the html in wich we can use angular functionalities</p>
+    </li>
+    <li>ng-model</br>
+      <p>Defines the name of a variable that will store the data of an input</p>
+    </li>
+    <li>ng-bind</br>
+      <p>Ouputs the data stored on the model directive</p>
+    </li>
+    <li>ng-init</br>
+      <p>Initialices the data of the angular app</p>
+    </li>
+    <li>ng-repeat</br>
+      <p>Repeats an HTML element</p>
+      <p>The ng-repeat directive actually clones HTML elements once for each item in a collection.
+        The ng-repeat directive can be used on an array of objects</p>
+    </li>
+  </ul>
+  <h3>Examples:</h3>
+  <div ng-app="myApp" ng-init="person='Paco'; names = ['Jani','Hege','Kai']; people=[
     {name:'Jani',country:'Norway'},
     {name:'Hege',country:'Sweden'},
     {name:'Kai',country:'Denmark'}]">
-        <p>Name:<input type="text" ng-model="person"></p>
-        <p>Name written: <span ng-bind="person"></span></p>
-        <form name="myForm">
-            <p>Data validation ng-model</p>
-            <p>Email: <input type="email" name="myEmail" ng-model="email"></p>
-            <span ng-show = "myForm.myEmail.$error.email">Not a valid email</span>
-        </form>
-        <p>ng-Repeat directive with an array</p>
-        <ul>
-            <li ng-repeat = "name in names">{{name}}</li>
-        </ul>
-        <p>ng-Repeat directive with an array of objects</p>
-        <ul>
-            <li ng-repeat = "person in people">{{person.name + " " + person.country}}</li>
-        </ul>
-        <p>Data from a custom directive</p>
-        <p my-directive></p>
-    </div>
+    <p>Name:<input type="text" ng-model="person"></p>
+    <p>Name written: <span ng-bind="person"></span></p>
+    <form name="myForm">
+      <p>Data validation ng-model</p>
+      <p>Email: <input type="email" name="myEmail" ng-model="email"></p>
+      <h1>Status</h1>
+      Valido:{{myForm.myEmail.$valid}}
+      Modified:{{myForm.myEmail.$dirty}}
+      Touched:{{myForm.myEmail.$touched}}
+      <span ng-show="myForm.myEmail.$error.email">Not a valid email</span>
+    </form>
+    <p>ng-Repeat directive with an array</p>
+    <ul>
+      <li ng-repeat="name in names">{{name}}</li>
+    </ul>
+    <p>ng-Repeat directive with an array of objects</p>
+    <ul>
+      <li ng-repeat="person in people">{{person.name + " " + person.country}}</li>
+    </ul>
+    <p>Data from a custom directive</p>
+    <p my-directive></p>
+  </div>
 </body>
+
 </html>

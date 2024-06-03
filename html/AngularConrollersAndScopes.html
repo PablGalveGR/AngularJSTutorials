@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="../JSAngular/AngularConrollersAndRoles.js"></script>
+</head>
+
+<body>
+  <h1>Modules, Directives and Controllers</h1>
+  <h2>Modules</h2>
+  <p>It is the container for the diferent parts of an aplication like the <strong>controllers</strong></p>
+  <h2>Directives</h2>
+  <p>AngularJS directives are used to extend HTML. Directives are markers on HTML DOM element that tell AngularJS to
+    attach a specified behavior to that HTML element.</p>
+  <h2>Controllers</h2>
+  <p>It controls the data of AngularJS applications</p>
+  <div ng-app="myApp" >
+    <p>Examples:</p>
+    <div ng-controller="myController">
+      <p>Data from a Controller declared in a js file</p>
+      <p>Name: {{firstname + " " + lastname}}</p>
+      <p>Full name from a function: {{fullName()}}</p>
+    </div>
+    <h2>Scopes</h2>
+    <p>The rootScope's favorite color:</p>
+    <h3 style="color: {{color}};">{{color}}</h3>
+
+    <div ng-controller="colorController">
+      <p>The scope of the controller's favorite color:</p>
+      <h3 style="color: {{color}};">{{color}}</h3>
+    </div>
+
+    <p>The rootScope's favorite color is still:</p>
+    <h3 style="color: {{color}};">{{color}}</h3>
+  </div>
+</body>
+
+</html>

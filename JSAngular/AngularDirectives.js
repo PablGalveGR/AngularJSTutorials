@@ -3,4 +3,4 @@ app.directive("myDirective", function(){
     return{
         template:"Directive data"
     };
-})
+});
