@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+    <h1>Modules, Directives and Controllers</h1>
+    <h2>Modules</h2>
+    <p>It is the container for the diferent parts of an aplication like the <strong>controllers</strong></p>
+    <h2>Directives</h2>
+    <p>AngularJS directives are used to extend HTML. Directives are markers on HTML DOM element that tell AngularJS to attach a specified behavior to that HTML element.</p>
+    <h2>Controllers</h2>
+    <p>It controls the data of AngularJS applications</p>
+    <div ng-app="myApp" ng-controller="myController">
+        <p>Examples:</p>
+        <p>Data from a Controller</p>
+        <p>Name: {{firstname + " " + lastname}}</p>
+    </div>
+    <script>
+        let app = angular.module("myApp", []);
+        app.controller("myController", function($scope){
+            $scope.firstname = "Manolo";
+            $scope.lastname = "Ramirez";
+        });
+    </script>
+</body>
+</html>

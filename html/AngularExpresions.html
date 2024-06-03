@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular expressions</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+    <h1>Angular expressions</h1>
+    <p>Are defined using {{}}, they will output the data expresed inside.They can also be used as the bind directive,
+         but can not be used with loops, exceptions or conditionals:</p>
+    <h2>Examples</h2>
+    <div ng-app="" ng-init="name='Pepe'; sport='Baseball'; person={firstName:'Javi',lastName:'Pez'};points=[1,15,19,2,40]">
+        <p>Data from a ng-init with two variables</p>
+        <p>Name: {{name}} | Sport: {{sport}}</p>
+        <p>Data from a ng-init JsObject</p>
+        <p>Name: {{person.firstName}} | Lastname: {{person.lastName}}</p>
+        <p>Data from a ng-init Array</p>
+        <p>Points: {{points[3]}}</p>
+        <p>Calculus expresions</p>
+        <p><input type="number" ng-model="number1"> x <input type="number" ng-model="number2"></p>
+        <p>Result: {{number1 * number2}}</p>
+    </div>
+    
+</body>
+</html>

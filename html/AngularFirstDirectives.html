@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular Introduction</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+    
+    <h1>Angular Intro</h1>
+    <h2>First directives, ng-app, ng-model, ng-bind</h2>
+    <ul>
+        <li>ng-app</br>
+            <p>Defines the part of the html in wich we can use angular functionalities</p>
+        </li>
+        <li>ng-model</br>
+            <p>Defines the name of a variable that will store the data of an input</p>
+        </li>
+        <li>ng-bind</br>
+            <p>Ouputs the data stored on the model directive</p>
+        </li>
+        <li>ng-init</br>
+            <p>Initialices the data of the angular app</p>
+        </li>
+    </ul>
+    <h3>Example:</h3>
+    <div ng-app="" ng-init="name='Paco'">
+        <p>Name:<input type="text" ng-model="name"></p>
+        <p>Name written: <span ng-bind="name"></span></p>
+    </div>
+</body>
+</html>
