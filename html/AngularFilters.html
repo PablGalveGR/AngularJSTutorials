@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="..\JSAngular\AngularFilters.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <p>AngularJS provides filters to transform data:</p>
+  <ul>
+    <li>
+      currency:Format a number to a currency format.
+    </li>
+    <li>
+      date:Format a date to a specified format.
+    </li>
+    <li>
+      filter:Select a subset of items from an array.
+    </li>
+    <li>
+      json:Format an object to a JSON string.
+    </li>
+    <li>
+      limitTo:Limits an array/string, into a specified number of elements/characters.
+    </li>
+    <li>
+      lowercase:Format a string to lower case.
+    </li>
+    <li>
+      number:Format a number to a string.
+    </li>
+    <li>
+      orderBy:Orders an array by an expression.
+    </li>
+    <li>
+      uppercase:Format a string to upper case.
+    </li>
+  </ul>
+  <p>Adding filters to expressions</p>
+  <div ng-app="myApp" ng-controller="myController">
+    <p>Currency:</p>
+    <p>{{dollars|currency}}</p>
+    <p>Date:</p>
+    <p>{{today|date}}</p>
+    <p>Filter:
+      <input type="text" ng-model="filterText">
+    </p>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Country</th>
+      </tr>
+      <tr ng-repeat="name in names | filter : filterText">
+        <td>{{name.name}}</td>
+        <td>{{name.country}}</td>
+      </tr>
+    </table>
+    <p>Filter by name:
+      <input type="text" ng-model="filterTextX.name">
+    </p>
+    <p>Filter by country:
+      <input type="text" ng-model="filterTextX.country">
+    </p>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Country</th>
+      </tr>
+      <tr ng-repeat="name in names | filter : filterTextX">
+        <td>{{name.name}}</td>
+        <td>{{name.country}}</td>
+      </tr>
+    </table>
+    <p>Json:</p>
+    <p>{{obj|json}}</p>
+    <p>LimitTo:
+      <input type="text" ng-model="limit">
+    </p>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Country</th>
+      </tr>
+      <tr ng-repeat="name in names | limitTo : limit">
+        <td>{{name.name}}</td>
+        <td>{{name.country}}</td>
+      </tr>
+    </table>
+    <p>Lowercase:
+      <input type="text" ng-model="textToLower">
+    </p>
+    <p>{{textToLower|lowercase}}</p>
+    <p>Uppercase:
+      <input type="text" ng-model="textToUpper">
+    </p>
+    <p>{{textToUpper|uppercase}}</p>
+    <p>Number:
+      <input type="number" ng-model="num">
+    </p>
+    <p>{{num|number}}</p>
+    <p>OrderBy:<select ng-model="order">
+        <option value="name">Name</option>
+        <option value="country">Country</option>
+      </select></p>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Country</th>
+      </tr>
+      <tr ng-repeat="name in names | orderBy : order">
+        <td>{{name.name}}</td>
+        <td>{{name.country}}</td>
+      </tr>
+    </table>
+  </div>
+</body>
+
+</html>
