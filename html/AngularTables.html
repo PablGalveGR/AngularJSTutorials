@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="..\JSAngular\AngularTables.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <p>AngularJS examples of data representation in tables:</p>
+  <p>Adding filters to expressions</p>
+  <div ng-app="myApp" ng-controller="myController">
+    <p>Filter:
+      <input type="text" ng-model="filterText">
+    </p>
+    <table>
+      <tr>
+        <th ng-repeat="header in tableHeaders">
+          {{header}}
+        </th>
+      </tr>
+      <tr ng-repeat="name in names | filter : filterText">
+        <td>{{name.name}}</td>
+        <td>{{name.country}}</td>
+      </tr>
+    </table>
+    <p>Filter by name:
+      <input type="text" ng-model="filterTextX.name">
+    </p>
+    <p>Filter by country:
+      <input type="text" ng-model="filterTextX.country">
+    </p>
+    <table>
+      <tr>
+        <th ng-repeat="header in tableHeaders">
+          {{header}}
+        </th>
+      </tr>
+      <tr ng-repeat="name in names | filter : filterTextX">
+        <td>{{name.name}}</td>
+        <td>{{name.country}}</td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th ng-repeat="header in tableHeaders">
+          {{header}}
+        </th>
+
+      </tr>
+      <tr ng-repeat="name in names | limitTo : limit">
+        <td>{{name.name}}</td>
+        <td>{{name.country}}</td>
+      </tr>
+    </table>
+    <p>{{num|number}}</p>
+    <p>OrderBy:<select ng-model="order">
+        <option value="name">Name</option>
+        <option value="country">Country</option>
+      </select></p>
+    <table>
+      <tr>
+        <th ng-repeat="header in tableHeaders">
+          {{header}}
+        </th>
+      </tr>
+      <tr ng-repeat="name in names | orderBy : order">
+        <td>{{name.name}}</td>
+        <td>{{name.country}}</td>
+      </tr>
+    </table>
+    <p>Table with three headers</p>
+    <table>
+      <tr>
+        <th ng-repeat="header in tableHeaders2">
+          {{header}}
+        </th>
+      </tr>
+      <tr ng-repeat="name in names2">
+        <td>{{name.name}}</td>
+        <td>{{name.country}}</td>
+        <td>{{name.city}}</td>
+      </tr>
+    </table>
+  </div>
+</body>
+
+</html>
